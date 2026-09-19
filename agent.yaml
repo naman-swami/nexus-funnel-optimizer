@@ -1,0 +1,6 @@
+spec_version: "0.1.0"
+name: nexus-funnel-optimizer
+version: "0.1.0"
+description: "B2B pipeline velocity, predictive lead propensity scoring, and dynamic outreach synthesis agent optimizing deal conversion cycles."
+model:
+  preferred: llama-3.3-70b-versatile

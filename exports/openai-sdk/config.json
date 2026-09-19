@@ -1,0 +1,28 @@
+{
+  "name": "nexus-funnel-optimizer",
+  "instructions": "You are nexus-funnel-optimizer. Score inbound and outbound leads based on Ideal Customer Profile (ICP) alignment, predict churn hazards, and generate high-conversion personalized sales narratives.",
+  "model": "gpt-4o",
+  "tools": [
+    {
+      "type": "function",
+      "function": {
+        "name": "score-lead-propensity",
+        "description": "Calculate conversion propensity score based on firmographic and behavioral attributes."
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "model-churn-hazard",
+        "description": "Calculate renewal risk score and contract expansion probability."
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "synthesize-outreach-email",
+        "description": "Generate personalized B2B outreach messaging referencing verified prospect value drivers."
+      }
+    }
+  ]
+}
