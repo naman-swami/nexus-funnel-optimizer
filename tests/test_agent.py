@@ -1,15 +1,14 @@
+import os
 import pytest
-from src.funnel_engine import SalesFunnelEngine
+from funnel.cac_ltv_engine import MarketingFunnelEngine
 
-def test_high_intent_lead():
-    engine = SalesFunnelEngine()
-    lead = {"lead_id": "L1", "employee_count": 200, "uses_kubernetes": True, "recent_failed_deploys": 4, "visited_pricing_page": True}
-    res = engine.evaluate_lead(lead)
-    assert res["qualification_tier"] == "TIER_A_IMMEDIATE_SDR"
-    assert res["propensity_score"] >= 80
-
-def test_low_intent_lead():
-    engine = SalesFunnelEngine()
-    lead = {"lead_id": "L2", "employee_count": 10, "uses_kubernetes": False, "recent_failed_deploys": 0, "visited_pricing_page": False}
-    res = engine.evaluate_lead(lead)
-    assert res["qualification_tier"] == "TIER_C_INACTIVE"
+def test_unit_economics_calculation():
+    res = MarketingFunnelEngine.calculate_unit_economics(
+        spend_usd=10000.0, acquired_customers=100, arpu_monthly=100.0, gross_margin=0.80, monthly_churn=0.02
+    )
+    # CAC = 10000 / 100 = 100.0
+    # LTV = (100 * 0.8) / 0.02 = 80 / 0.02 = 4000.0
+    assert res["cac_usd"] == 100.0
+    assert res["ltv_usd"] == 4000.0
+    assert res["ltv_to_cac_ratio"] == 40.0
+    assert res["unit_economics_rating"] == "EXCELLENT_SCALABLE"

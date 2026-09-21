@@ -1,0 +1,18 @@
+[
+  {
+    "channel": "Paid Search",
+    "spend_usd": 25000.0,
+    "acquired_customers": 250,
+    "arpu_monthly_usd": 120.0,
+    "gross_margin": 0.8,
+    "monthly_churn_rate": 0.03
+  },
+  {
+    "channel": "Organic Referral",
+    "spend_usd": 4000.0,
+    "acquired_customers": 160,
+    "arpu_monthly_usd": 95.0,
+    "gross_margin": 0.8,
+    "monthly_churn_rate": 0.02
+  }
+]
