@@ -55,7 +55,7 @@ nexus-funnel-optimizer/
 │   └── saas_growth_metrics.md       # Growth benchmarks reference
 ├── tests/
 │   └── test_agent.py                # Marketing test suite
-├── main.py                          # Growth analytics CLI
+├── optimize.py                          # Growth analytics CLI
 └── requirements.txt
 ```
 
@@ -66,5 +66,5 @@ nexus-funnel-optimizer/
 pytest tests/ -v
 
 # Audit sample marketing cohorts
-python main.py --demo
+python optimize.py --demo
 ```
